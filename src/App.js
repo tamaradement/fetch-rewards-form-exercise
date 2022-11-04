@@ -133,19 +133,19 @@ class App extends Component {
     }
 
     return(
-      <div className="form-container">
-        <h1>User creation form</h1>
-        <form onSubmit={this.handleFormSubmission}>            
-          <Field 
-            name="Full Name"
-            error={this.state.errors.name}>
-              <input 
-                className="form-control" 
-                name={formFields.name} 
-                placeholder='Enter full name...'
-              />
-          </Field>      
-          <div className="form-group">
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div className="form-container">
+          <h1>User creation form</h1>
+          <form onSubmit={this.handleFormSubmission}>            
+            <Field 
+              name="Full Name"
+              error={this.state.errors.name}>
+                <input 
+                  className="form-control" 
+                  name={formFields.name} 
+                  placeholder='Enter full name...'
+                />
+            </Field>      
             <Field 
               name="Email"
               error={this.state.errors.email}>
@@ -164,8 +164,6 @@ class App extends Component {
                   placeholder='Enter password...'
                 />
             </Field>        
-          </div> 
-          <div className='form-group'>
             <Field 
               name="Occupation"
               error={this.state.errors.occupation}>
@@ -183,22 +181,24 @@ class App extends Component {
                 category='State' 
                 fieldName={formFields.state} 
               />
-            </Field>                    
-          </div>                         
-          <button className='btn btn-primary btn-lg' type='Submit'>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-              <div style={{fontWeight: 700}}>Submit</div>
-              {this.state.isLoading && 
-                <div 
-                  style={{marginLeft: 10}} 
-                  className="spinner-border text-light" 
-                  role="status">
-                <span className="sr-only">Loading...</span>            
-              </div>}
-            </div>
-          </button>
-        </form>
-      </div>    
+            </Field> 
+            <div className="submit-container">
+            <button className='btn btn-primary btn-lg submit-button' type='Submit'>
+              <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <div style={{fontWeight: 700, fontSize: 15}}>Submit</div>
+                {this.state.isLoading && 
+                  <div 
+                    style={{marginLeft: 10}} 
+                    className="spinner-border text-light" 
+                    role="status">
+                  <span className="sr-only">Loading...</span>            
+                </div>}
+              </div>
+            </button>  
+            </div>                                    
+          </form>
+        </div>  
+      </div>
     ); 
   }
 }

@@ -8,7 +8,7 @@ Link to deployed app:
 https://fetch-rewards-form-exercise.herokuapp.com/
 
 Link to video demo:
-https://www.loom.com/share/d1c21cf42d6a4bf5be94cc5b25584760
+https://www.loom.com/share/4e89ba4081734828bbdc6683dee23ce8
 
 ### Requirements
 1) Display a form with inputs for each of the following fields: [X]

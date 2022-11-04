@@ -2,6 +2,10 @@ html {
   padding: 50px;
 }
 
+body {
+  background-color: '#FAF9F6';
+}
+
 h1 {
   padding-bottom: 20px;
 }
@@ -10,17 +14,33 @@ p {
   font-size: 16px;
 }
 
-.form-container {
-  max-width: 75%;
+/* Overriding styles */
+input {
+  font-size: 13px !important;
 }
 
-.form-group {
+::-webkit-input-placeholder {
+  font-size: 13px !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  font-size: 13px !important;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+  font-size: 13px !important;
+}
+
+.form-container {
   display: flex;
+  flex-direction: column;
+  min-width: 40%;
+  justify-content: center;
+  padding: 40px;
+  background-color: white;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
 .form-field {
-  padding-bottom: 10px;
-  padding-right: 20px;
   flex-grow: 1;  
 }
 
@@ -28,7 +48,7 @@ p {
   padding-top: 5px;
   font-size: 10px;
   color: red;
-  height: 20px;
+  height: 10px;
 }
 
 .form-title {
@@ -38,4 +58,14 @@ p {
 
 .form-required {
   color: red;
+}
+
+.submit-container {
+  display: flex;    
+  flex-grow: 1;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 10px;
 }
