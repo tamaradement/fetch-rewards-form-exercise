@@ -2,10 +2,12 @@
 ## Fetch Rewards Frontend Exercise
 ## Candidate <> Tamara deMent
 
+To run the app locally, clone the project directory and run: `npm start`
 
-To get started, clone the project directory and run: `npm start`
+Link to deployed app: 
+https://fetch-rewards-form-exercise.herokuapp.com/
 
-### Link to demo:
+Link to video demo:
 https://www.loom.com/share/d1c21cf42d6a4bf5be94cc5b25584760
 
 ### Requirements
