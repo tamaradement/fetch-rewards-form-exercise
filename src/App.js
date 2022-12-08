@@ -110,6 +110,26 @@ class App extends Component {
     });
   }
 
+  handleChange = (event) => {
+    event.preventDefault();
+  
+    // If there's error data.
+    if (Object.keys(this.state.errors).length) {
+      const error = formFieldValidations[event.target.name](event.target);
+      const errorData = Object.assign({}, this.state.errors);
+
+      if (error) {
+        errorData[event.target.name] = error;
+      } else {
+        delete errorData[event.target.name];
+      }
+
+      this.setState({
+        errors: errorData,
+      });
+    }
+  }
+
   render() {
     // Wait for the occupations and states to load before rendering the form.
     if (!this.state.occupations.length || !this.state.states.length) {
@@ -118,7 +138,7 @@ class App extends Component {
           style={{marginLeft: 10}} 
           className="spinner-border text-dark" 
           role="status">
-          <span class="sr-only">Loading...</span>            
+          <span className="sr-only">Loading...</span>            
         </div>
       );
     }
@@ -144,6 +164,7 @@ class App extends Component {
                   className="form-control" 
                   name={formFields.name} 
                   placeholder='Enter full name...'
+                  onChange={this.handleChange}
                 />
             </Field>      
             <Field 
@@ -153,6 +174,7 @@ class App extends Component {
                   className="form-control"                 
                   name={formFields.email} 
                   placeholder='example@email.com'
+                  onChange={this.handleChange}
                 />
             </Field>           
             <Field 
@@ -162,6 +184,7 @@ class App extends Component {
                   className="form-control" 
                   type="password" name={formFields.password} 
                   placeholder='Enter password...'
+                  onChange={this.handleChange}
                 />
             </Field>        
             <Field 
@@ -170,16 +193,19 @@ class App extends Component {
               <Dropdown
                 list={this.state.occupations} 
                 category='Occupation' 
-                fieldName={formFields.occupation} 
+                fieldName={formFields.occupation}
+                onChange={this.handleChange} 
               /> 
             </Field>
             <Field 
               name="State"              
-              error={this.state.errors.state}>
+              error={this.state.errors.state}
+              >
               <Dropdown 
                 list={this.state.states} 
                 category='State' 
                 fieldName={formFields.state} 
+                onChange={this.handleChange}
               />
             </Field> 
             <div className="submit-container">

@@ -10,7 +10,7 @@ export const Dropdown = (props) => {
   })
 
   return (       
-    <select className="form-select form-select-lg" name={props.fieldName} required>
+    <select className="form-select form-select-lg" onChange={props.onChange} name={props.fieldName} required>
       <option selected disabled value={value}>{dropdownText}</option>
       {listItems}
     </select>
